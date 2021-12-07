@@ -1,0 +1,33 @@
+
+include _includes/sharedHTMLfunctions
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ link(rel='stylesheet', href='/stylesheets/style.css')
+ 
+ 
+block content
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapLine}
+
+  .row
+    .col-12.col-md-8
+      each location in locations
+        .card
+          .card-block
+            h4
+              a(href='registration')= location.name
+             
+              span.badge.badge-pill.badge-default.float-right= location.departTime
+              span.badge.badge-pill.badge-default.float-center= location.noOfPassengers
+            p.destination= location.destination
+            .facilities
+              each facility in location.facilities
+                span.badge.badge-warning= facility
+
+
+    .col-12.col-md-4
+      p.lead= sidebar
