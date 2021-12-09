@@ -1,3 +1,14 @@
+
+const request = require('request');
+const apiOptions = { 
+server : 'http://localhost:3000' 
+}; 
+if (process.env.NODE_ENV === 'production') { 
+apiOptions.server = 'https://cspproject123.herokuapp.com/'; 
+}
+
+
+
 /* GET 'login' page*/
 const homelist = function(req, res){
 res.render('login', {
