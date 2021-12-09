@@ -8,7 +8,6 @@ apiOptions.server = 'https://cspproject123.herokuapp.com/';
 }
 
 
-
 /* GET 'login' page*/
 const homelist = function(req, res){
 res.render('login', {
